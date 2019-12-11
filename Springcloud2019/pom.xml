@@ -12,6 +12,7 @@
         <module>spring-eureka-server</module>
         <module>spring-eureka-client</module>
         <module>mybatis-generator</module>
+        <module>spring-configuration-server</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -49,16 +50,31 @@
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
-
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.29</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <build>
+        <finalName>myproject</finalName>
+        <!--配置允许访问资源start-->
+        <resources>
+            <resource>
+                <directory>src/main/resource</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimiter>$</delimiter>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+        <!--配置允许访问资源end-->
+
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -69,6 +85,11 @@
                         <target>${java.version}</target>
                         <encoding>${project.build.sourceEnconding}</encoding>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
