@@ -1,0 +1,14 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: localhost
+
+
+eureka:
+  client:
+    fetch-registry: false #该模块作为服务注册中心不必注册自己
+    register-with-eureka: false #该模块作为服务注册中心不必注册自己
+    service-url:
+      defaultZone: http://${spring.application.name}:${server.port}/eureka/

@@ -1,0 +1,17 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: eureka-client
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:9000/eureka/ #服务注册中心
+
+  instance:
+    prefer-ip-address: true #采用ip注册
+    instance-id: ${spring.application.name}:${server.port} #实例名
