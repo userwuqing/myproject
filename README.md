@@ -17,3 +17,4 @@ eureka与zookeeper区别
 
 
 新增eureka注册中心（集群）
+1、server.port配置无效：原因可能是classes下并未编译配置文件（yml/properties）

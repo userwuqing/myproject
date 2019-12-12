@@ -1,16 +1,16 @@
 server:
-  port: 9001
+  port: 80
 
 spring:
   application:
     name: eureka-client
 
-eureka:
-  client:
-    register-with-eureka: false #服务消费者可注册可不注册服务
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:9000/eureka/ #服务注册中心
+#eureka:
+    #  client:
+    #register-with-eureka: false #服务消费者可注册可不注册服务
+    #fetch-registry: true
+      #service-url:
+    #defaultZone: http://localhost:9000/eureka/ #服务注册中心
 
   instance:
     prefer-ip-address: true #采用ip注册
@@ -19,5 +19,5 @@ eureka:
 info: #配置从eureka 点击的某个服务的详细信息
   app.name: ${spring.application.name}
   company.name: www.wuqing.com
-  build.artifactid: $project.artifaceid$
-  build.version: $project.version$
+  build.artifactid: $project.artifactId$
+  build.version: $project.modelVersion$

@@ -9,7 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>spring-eureka-server</artifactId>
+    <artifactId>spring-eureka-server-9002</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -31,4 +31,5 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
+
 </project>
