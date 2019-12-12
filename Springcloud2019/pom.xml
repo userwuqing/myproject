@@ -16,6 +16,8 @@
         <module>spring-eureka-server-register-8002</module>
         <module>spring-eureka-server-9001</module>
         <module>spring-eureka-server-9002</module>
+        <module>spring-eureka-client-feign</module>
+        <module>spring-api</module>
 
         <module>mybatis-generator</module>
     </modules>

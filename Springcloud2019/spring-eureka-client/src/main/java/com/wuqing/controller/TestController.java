@@ -34,18 +34,13 @@ public class TestController {
     @GetMapping("test.do")
     public String test(HttpServletRequest request, HttpServletResponse response){
 
-        String comeBackValue = restTemplate.getForObject("http://eureka-server/test/test.do", String.class);
+        String comeBackValue = restTemplate.getForObject("http://EUREKA-SERVER/test/selectDiscoveryServer.do", String.class);
         return comeBackValue;
     }
 
     @GetMapping("discoveryServer.do")
     public Object discoveryServer() {
-        List<String> services = discoveryClient.getServices();
-        System.out.println("所有启用服务暴露的微服务"+services);
-        List<ServiceInstance> instances = discoveryClient.getInstances("EUREKA-CLIENT");
-        for (ServiceInstance serviceInstance : instances) {
-            System.out.println(serviceInstance.getServiceId()+"\\s" +serviceInstance.getHost()+"\\s"+serviceInstance.getPort());
-        }
-        return this.discoveryClient;
+        Object comeBackValue = restTemplate.getForObject("http://EUREKA-SERVER/test/selectDiscoveryServer.do", Object.class);
+        return comeBackValue;
     }
 }

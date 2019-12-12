@@ -27,12 +27,13 @@ public class TestController {
         return "这里是9002微服务";
     }
 
+
     @GetMapping("selectDiscoveryServer.do")
     public UserPO selectDiscoveryServer() {
         List<String> services = discoveryClient.getServices();
         UserPO userPO = new UserPO();
         userPO.setUserName("eureka-server");
-        userPO.setAddress("eureka-server：9000");
+        userPO.setAddress("eureka-server：9002");
         return userPO;
     }
 }

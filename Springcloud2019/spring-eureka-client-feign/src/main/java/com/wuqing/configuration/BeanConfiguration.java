@@ -16,14 +16,15 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class BeanConfiguration {
 
-    @Bean
+    /*@Bean
     @LoadBalanced //表示使用spring.application.name作为服务地址，也启用ribbon负载均衡
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
-
+*/
     @Bean
     //启动客户端负载均衡规则
+//    @LoadBalanced
     public IRule ribbonRule() {
         return new RandomRule();
     }

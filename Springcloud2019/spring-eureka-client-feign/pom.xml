@@ -9,7 +9,7 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>spring-eureka-server-9001</artifactId>
+    <artifactId>spring-eureka-client-feign</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -30,6 +30,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+        <!--包含spring-cloud-starter-netflix-ribbon和spring-cloud-starter-loadbalancer-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
         <!--这里引入module项目jar。必须先对root（父类项目）install，否则会报错-->
         <dependency>
             <groupId>com.wuqing</groupId>
@@ -37,5 +42,4 @@
             <version>1.0.0</version>
         </dependency>
     </dependencies>
-
 </project>
