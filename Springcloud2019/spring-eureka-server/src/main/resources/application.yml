@@ -22,3 +22,4 @@ info: #配置从eureka 点击的某个服务的详细信息
   company.name: www.wuqing.com
   build.artifactid: $project.artifaceId$
   build.version: $project.version$
+

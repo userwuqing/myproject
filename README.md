@@ -28,3 +28,8 @@ feign代理的目标微服务必要条件
 **Spring-cloud-netflix-ribbon**
 可以自定义，启用EnableRibbonClient时，自定义负载类需要目录高于启动类，否则会所有Ribbon共享一个规则。
 
+
+**Spring-cloud-netflix-hystrix**
+1、服务熔断：就是处理异常（缺点-方法膨胀/高耦合。在服务端）
+2、服务降级：整体资源不够，先关闭某个微服务，待问题回归正常后，服务重回（在客户端）
+
