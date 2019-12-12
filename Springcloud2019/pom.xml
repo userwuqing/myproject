@@ -13,6 +13,8 @@
         <module>spring-eureka-client</module>
         <module>mybatis-generator</module>
         <module>spring-configuration-server</module>
+        <module>spring-eureka-server-register-8001</module>
+        <module>spring-eureka-server-register-8002</module>
     </modules>
     <packaging>pom</packaging>
 

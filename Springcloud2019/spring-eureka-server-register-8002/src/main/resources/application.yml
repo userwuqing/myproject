@@ -1,9 +1,9 @@
 server:
-  port: 8000
+  port: 8002
 
 spring:
   application:
-    name: eureka-server-register8000 #若注册中心在单机集群，需要配置电脑hots的本地dns解析
+    name: eureka-server-register8002 #若注册中心在单机集群，需要配置电脑hots的本地dns解析
 
 
 eureka:

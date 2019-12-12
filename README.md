@@ -10,3 +10,10 @@ eureka与zookeeper区别
     P:partition tolerance（分区容错性）
 区别：eureka遵守AP zookeeper遵守CP
    
+若eureka与服务超过15分钟没有心跳（可能网络故障或其他）
+1、eureka不会在注册表中移除故障的服务
+2、在接受新服务注册时暂时不会同步到其他注册中心（eureka）
+3、网络稳定后，新注册服务会及时同步到其他注册中心（eureka）
+
+
+新增eureka注册中心（集群）

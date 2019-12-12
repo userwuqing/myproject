@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 public class BeanConfiguration {
 
     @Bean
-    @LoadBalanced //表示使用spring.application.name作为服务地址
+    @LoadBalanced //表示使用spring.application.name作为服务地址，也启用ribbon负载均衡
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
