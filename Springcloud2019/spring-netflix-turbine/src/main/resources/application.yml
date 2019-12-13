@@ -1,0 +1,20 @@
+server:
+  port: 6002
+
+spring:
+  application:
+    name: hystrix-dishbord-burbine
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true #表示会从注册中心获取服务
+    service-url:
+      defaultZone: http://eureka-server-register8000:8000/eureka/,http://eureka-server-register8001:8001/eureka/,http://eureka-server-register8002:8002/eureka/ #服务注册中心，集群时用逗号隔开
+
+#burbine集群监控才需要如下配置
+turbine:
+  aggregator:
+    #cluster-config: "default"
+  app-config: eureka-server #这里是指微服务的服务名(spring.application.name)
+  cluster-name-expression: "'default'" #这里必须是string类型的

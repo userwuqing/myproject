@@ -11,7 +11,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://eureka-server-register8000:8000/eureka/ #,http://eureka-server-register8001:8001/eureka/,http://eureka-server-register8002:8002/eureka/ #服务注册中心，集群时用逗号隔开
+      defaultZone: http://eureka-server-register8000:8000/eureka/,http://eureka-server-register8001:8001/eureka/,http://eureka-server-register8002:8002/eureka/ #服务注册中心，集群时用逗号隔开
   instance:
     prefer-ip-address: true #采用ip注册
     instance-id: ${spring.application.name}:${server.port} #实例名

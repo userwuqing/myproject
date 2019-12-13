@@ -17,7 +17,9 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-        <!--主要是为了在eureka注册中心中点击该服务跳转展示该微服务的基本信息-->
+        <!--主要是为了在eureka注册中心中点击该服务跳转展示该微服务的基本信息
+        hystrix服务监控也需要这个依赖
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -35,6 +37,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
+
         <!--这里引入module项目jar。必须先对root（父类项目）install，否则会报错-->
         <dependency>
             <groupId>com.wuqing</groupId>

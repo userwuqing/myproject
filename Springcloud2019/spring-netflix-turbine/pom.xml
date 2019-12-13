@@ -9,38 +9,34 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>spring-eureka-server-9002</artifactId>
+    <artifactId>spring-netflix-turbine</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
+        <!--springboot-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-        <!--主要是为了在eureka注册中心中点击该服务跳转展示该微服务的基本信息-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+        <!--turbine必须注册到eureka中才能对服务进行监控-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!--服务熔断器-->
+        <!--监控服务信息完善-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!--微服务链路熔断机制-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
-        <!--这里引入module项目jar。必须先对root（父类项目）install，否则会报错-->
+        <!--服务监控（集群）-->
         <dependency>
-            <groupId>com.wuqing</groupId>
-            <artifactId>spring-api</artifactId>
-            <version>1.0.0</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-turbine</artifactId>
         </dependency>
     </dependencies>
-
 </project>
