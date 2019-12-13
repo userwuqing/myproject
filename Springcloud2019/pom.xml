@@ -19,9 +19,11 @@
         <module>spring-eureka-client-feign</module>
         <module>spring-api</module>
         <module>spring-hystrix-dashboard</module>
+        <module>spring-netflix-turbine</module>
+        <module>spring-zuul-gateway</module>
 
         <module>mybatis-generator</module>
-        <module>spring-netflix-turbine</module>
+
     </modules>
     <packaging>pom</packaging>
 
@@ -56,12 +58,6 @@
                 <version>${spring-cloud.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
-            </dependency>
-
-            <!--方便查看依赖关系-->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-netflix-dependencies</artifactId>
             </dependency>
         </dependencies>
     </dependencyManagement>

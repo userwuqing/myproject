@@ -3,7 +3,6 @@
 SpringCloud版本（Finchley.SR4） 
 SpringBoot版本（2.0.X.RELEASE）
 JDK版本（1.8）
-新增服务发现
 **Spring-cloud-Eureka**
 
 eureka集群
@@ -23,6 +22,10 @@ eureka与zookeeper区别
 
 新增eureka注册中心（集群）
 1、server.port配置无效：原因可能是classes下并未编译配置文件（yml/properties）
+
+注意：
+服务注册中心需依赖spring-cloud-starter-netflix-eureka-server
+服务提供者把服务注册到服务注册中心必须依赖spring-cloud-starter-netflix-eureka-client而非spring-cloud-netflix-eureka-client
 
 **Spring-cloud-openFeign**
 
@@ -63,3 +66,9 @@ feign代理的目标微服务必要条件
 **spring-cloud-netflix-turbine**
 turbine集群监控服务，需要注意yml/properties配置文件cluster-name-expression: "'default'"，且
 fetch-registry: true以表示可在注册中心发现服务，必须如此配置。否则该turbine会一直loading状态
+
+zuul
+统一服务入口，类似
+
+**spring-cloud-starter-gateway**
+端口配置7000以下会出现服务迁移错误（原因未知）
