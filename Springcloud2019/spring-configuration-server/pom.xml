@@ -22,5 +22,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--避免从github获取文件报错"cannot open git-upload-pack"-->
+        <dependency>
+            <groupId>org.eclipse.jgit</groupId>
+            <artifactId>org.eclipse.jgit</artifactId>
+            <version>4.11.0.201803080745-r</version>
+        </dependency>
     </dependencies>
 </project>
