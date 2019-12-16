@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: application-test
+
+  cloud:
+    config:
+      uri: http://localhost:3344
+      fail-fast: true
+      #request-read-timeout: 5
+      username: userwuqing #git用户名
+      password: me201453176me #git密码

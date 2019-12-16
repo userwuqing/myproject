@@ -1,22 +1,17 @@
+server:
+  port: 3344
+
 spring:
   application:
     name: config-server
-  profiles:
-    active: dev,mysql
 
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/userwuqing/myproject.git #git远程仓库uri
-          search-paths: {application}/{profile} #搜索路径
-          basedir: #git的本地目录
-          skip-ssl-validation: true #跳过ssl检测
-          timeout: 5 #设置连接github的超时时间
-
-        health:
-          repositories: #健康检查，该值未map集合存储，因此配置如下
-            check: #集合检查键，一下为Repository类的属性
-              name:
-              label:
-              profiles: #默认值为default
+          uri: file:///${user.home}/Desktop/conf #git本地仓库uri
+          #uri: https://github.com/userwuqing/myproject.git #git远程仓库uri
+          #search-paths: {application}/{profile} #搜索路径
+          #basedir: d:/data #git的本地目录
+          #skip-ssl-validation: true #跳过ssl检测
+          #timeout: 5 #设置连接github的超时时间
