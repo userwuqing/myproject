@@ -6,7 +6,7 @@ spring:
     gateway:
       routes:
         - id: path_route
-          uri: http://localhost:9000/test/test.do
+          uri: http://localhost:9000/test/selectDiscoveryServer.do
           predicates:
             - Path=/
 
@@ -15,8 +15,3 @@ management:
     web:
       exposure:
         include: "*" #启用查看路由表
-
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: false

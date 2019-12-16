@@ -1,12 +1,9 @@
 spring:
-  application:
-    name: eureka-server9002-dev #这个是对应config sever中的yml文件名称
-  profiles:
-    active: test
-
   cloud:
     config:
       uri: http://localhost:3344 #配置中心uri
+      profile: dev
+      name: eureka-server9002
       fail-fast: true #快速失败返回
       #request-read-timeout: 5
       #username:  #git用户名

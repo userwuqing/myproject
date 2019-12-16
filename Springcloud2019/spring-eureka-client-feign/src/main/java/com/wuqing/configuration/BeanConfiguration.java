@@ -2,6 +2,7 @@ package com.wuqing.configuration;
 
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RandomRule;
+import com.netflix.loadbalancer.RoundRobinRule;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,8 +25,9 @@ public class BeanConfiguration {
 */
     @Bean
     //启动客户端负载均衡规则
-//    @LoadBalanced
+    @LoadBalanced
     public IRule ribbonRule() {
-        return new RandomRule();
+//        return new RandomRule();
+        return new RoundRobinRule();
     }
 }

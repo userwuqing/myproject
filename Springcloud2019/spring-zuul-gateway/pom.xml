@@ -39,23 +39,23 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
-        <!--新增路由功能-->
+        <!--&lt;!&ndash;服务发现与注册依赖&ndash;&gt;
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
-        <!--微服务链路熔断机制-->
+        &lt;!&ndash;微服务链路熔断机制&ndash;&gt;
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
 
 
-        <!--ribbon 客户端负载均衡-->
+        &lt;!&ndash;ribbon 客户端负载均衡&ndash;&gt;
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-        </dependency>
+        </dependency>-->
     </dependencies>
 </project>

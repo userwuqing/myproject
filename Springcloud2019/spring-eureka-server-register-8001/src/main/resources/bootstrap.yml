@@ -1,9 +1,4 @@
 spring:
-  application:
-    name: eureka-server-register #对应配置中心的配置文件名称
-    profiles:
-      active: dev
-
   cloud:
     config:
       uri: http://localhost:3344
