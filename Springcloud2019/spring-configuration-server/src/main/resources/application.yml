@@ -11,7 +11,7 @@ spring:
         git:
           uri: file:///${user.home}/Desktop/conf #git本地仓库uri
           #uri: https://github.com/userwuqing/myproject.git #git远程仓库uri
-          #search-paths: {application}/{profile} #搜索路径
+          search-paths: eureka-server-conf,eureka-server-register-conf #搜索路径,搜索子目录必须配例如eureka-server-register-conf/xxx
           #basedir: d:/data #git的本地目录
           #skip-ssl-validation: true #跳过ssl检测
           #timeout: 5 #设置连接github的超时时间

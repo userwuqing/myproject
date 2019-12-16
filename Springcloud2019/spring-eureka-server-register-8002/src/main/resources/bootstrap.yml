@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: eureka-server-register #对应配置中心的配置文件名称
+    profiles:
+      active: dev
+
+  cloud:
+    config:
+      uri: http://localhost:3344
+      fail-fast: true
+      profile: dev #配置中心配置文件中的profiles.active 一一对应
+      name: eureka-server-register8002
+
