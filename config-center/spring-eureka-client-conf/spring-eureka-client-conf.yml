@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: application-test
+  profiles:
+    active: dev
+
+  #测试总线刷新配置机制
+  datasource:
+    className: com.mysql.jdbc.driver
+    uri: http://1234567:8080
+    userName: test
+    password: 123456
