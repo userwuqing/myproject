@@ -6,7 +6,12 @@ spring:
     name: eureka-server
   profiles:
     active: dev
-    
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
 eureka:
   client:
     register-with-eureka: true

@@ -6,7 +6,12 @@ spring:
     name: eureka-server-register8000 #若注册中心在单机集群，需要配置电脑hots的本地dns解析
   profiles:
     active: dev
-    
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
 profiles:
   active: eureka-server-register8000
 
