@@ -27,7 +27,7 @@ public class BeanConfiguration {
     //启动客户端负载均衡规则
     @LoadBalanced
     public IRule ribbonRule() {
-//        return new RandomRule();
-        return new RoundRobinRule();
+//        return new RandomRule();//随机访问服务
+        return new RoundRobinRule();//轮询访问
     }
 }

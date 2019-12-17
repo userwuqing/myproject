@@ -11,7 +11,20 @@ spring:
         git:
           uri: file:///${user.home}/Desktop/conf #git本地仓库uri测试通过,windows系统为///，其他为//
           #uri: https://github.com/userwuqing/myproject.git #git远程仓库uri，
-          search-paths: eureka-server-conf,eureka-server-register-conf #搜索路径,搜索子目录必须配例如eureka-server-register-conf/xxx
+          search-paths: eureka-server-conf,eureka-server-register-conf,spring-eureka-client-conf #搜索路径,搜索子目录必须配例如eureka-server-register-conf/xxx
           #basedir: d:/data #git的本地目录
           #skip-ssl-validation: true #跳过ssl检测
           #timeout: 5 #设置连接github的超时时间
+
+  rabbitmq: #bus总线配置，需要安装ribbitmq
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+management: #为了能够访问/actuator/bus-refresh 接口
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+      base-path: /bus #默认是/actuator具体看WebEndpointProperties类

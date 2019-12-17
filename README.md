@@ -72,3 +72,7 @@ zuul
 
 **spring-cloud-starter-gateway**
 端口配置7000以下会出现服务迁移错误（原因未知）
+
+
+**spring-cloud-starter-bus**
+配置总线通知时需要management.endpoints.web.exposure.include=bus-refresh,否则无法刷新所有节点（post请求）

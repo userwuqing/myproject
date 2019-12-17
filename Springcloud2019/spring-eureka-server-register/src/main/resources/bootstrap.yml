@@ -5,5 +5,3 @@ spring:
       fail-fast: true
       profile: dev #配置中心配置文件中的profiles.active 一一对应
       name: eureka-server-register8000
-
-

@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
 
 /**
- * description：配置中心服务
+ * description：配置中心服务整合bus总线
  *
  * @author v_qqinwu
  * @date 2019年12月11日 16:48

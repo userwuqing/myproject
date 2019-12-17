@@ -1,6 +1,8 @@
 spring:
   application:
     name: application-test
+  profiles:
+    active: dev
 
   cloud:
     config:
@@ -9,3 +11,14 @@ spring:
       #request-read-timeout: 5
       #username:  #git用户名
       #password:  #git密码
+      profile: dev
+      name: spring-eureka-client
+
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
