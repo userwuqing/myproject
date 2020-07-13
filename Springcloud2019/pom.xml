@@ -23,6 +23,7 @@
         <module>spring-zuul-gateway</module>
 
         <module>mybatis-generator</module>
+        <module>spring-cloud-sleuth</module>
 
     </modules>
     <packaging>pom</packaging>

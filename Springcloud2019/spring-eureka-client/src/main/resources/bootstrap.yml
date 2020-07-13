@@ -17,8 +17,25 @@ spring:
     bus:
       trace:
         enabled: true
+
+
   rabbitmq:
     host: localhost
     port: 5672
     username: guest
     password: guest
+
+  zipkin:
+    base-url: http://localhost:5757/
+
+  sleuth:
+    sampler:
+      probability: 1.0 #设置采样比例为1.0（全部都要），默认0.1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+
+    fetch-registry: true
+    register-with-eureka: false

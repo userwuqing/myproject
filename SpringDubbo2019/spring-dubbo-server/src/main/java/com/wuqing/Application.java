@@ -2,17 +2,14 @@ package com.wuqing;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * description：
  *
  * @author v_qqinwu
- * @date 2019年12月11日 15:13
+ * @date 2019年12月24日 9:27
  **/
 @SpringBootApplication
-//@EnableEurekaClient
-@EnableDiscoveryClient //服务发现
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

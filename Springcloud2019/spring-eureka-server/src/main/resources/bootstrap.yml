@@ -8,4 +8,3 @@ spring:
       #request-read-timeout: 5
       #username:  #git用户名
       #password:  #git密码
-

@@ -25,7 +25,7 @@ public class UserServiceFallbackFactory implements FallbackFactory<IUserService>
             @Override
             public UserPO selectDiscoveryServer() {
                 UserPO userPO = new UserPO();
-                userPO.setUserName("未知。。。");
+//                userPO.setUserName("未知。。。");
                 return userPO;
             }
         };

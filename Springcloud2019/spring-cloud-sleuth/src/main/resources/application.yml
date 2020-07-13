@@ -1,0 +1,13 @@
+server:
+  port: 5757
+
+spring:
+  application:
+    name: zipkin-server
+
+
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: true #这一段是为了防止

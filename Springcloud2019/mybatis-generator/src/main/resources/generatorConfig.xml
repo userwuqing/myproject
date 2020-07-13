@@ -6,14 +6,13 @@
 <generatorConfiguration>
     <classPathEntry location="F:\repository_maven1\mysql\mysql-connector-java\5.1.27\mysql-connector-java-5.1.27.jar"/>
     <context id="my" targetRuntime="MyBatis3">
-        <commentGenerator type="com.comment.WuqingComment">
+      <!--  <commentGenerator type="com.comment.WuqingComment">
             <property name="suppressDate" value="false"/>
             <property name="suppressAllComments" value="true"/>
-        </commentGenerator>
-
+        </commentGenerator>-->
+        <!--myownerip 域名（系统hosts文件配置）-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        <!--myownerip 域名（系统hosts文件配置）-->
-                        connectionURL="jdbc:mysql://myownerip:3306/adviser"
+                        connectionURL="jdbc:mysql://9.77.82.113:3306/fund_data"
                         userId="cdw" password="cftbicdw@1234"/>
 
         <javaModelGenerator targetPackage="com.wuqing.po"
@@ -33,7 +32,7 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
-        <table tableName="t_hot_list_product" domainObjectName="HotListProductPO"
+        <table tableName="t_clean_task_fit_result" domainObjectName="CleanTaskFitResult"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">

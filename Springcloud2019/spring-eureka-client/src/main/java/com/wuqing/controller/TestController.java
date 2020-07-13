@@ -1,6 +1,9 @@
 package com.wuqing.controller;
 
+import com.api.po.UserPO;
 import jdk.nashorn.internal.ir.annotations.Reference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
@@ -25,7 +28,7 @@ import java.util.List;
 @RequestMapping("test")
 @RefreshScope
 public class TestController {
-
+    private static final Logger logger = LoggerFactory.getLogger(TestController.class);
     @Value("${spring.datasource.userName}")
     private String userName;
 
@@ -41,19 +44,21 @@ public class TestController {
     @GetMapping("test.do")
     public String test(HttpServletRequest request, HttpServletResponse response){
 
-        String comeBackValue = restTemplate.getForObject("http://EUREKA-SERVER/test/selectDiscoveryServer.do", String.class);
+        String comeBackValue = restTemplate.getForObject("http://EUREKA-SERVER/test/test.do", String.class);
+        logger.info("测试================="+comeBackValue);
         return comeBackValue;
     }
 
     @GetMapping("discoveryServer.do")
     public Object discoveryServer() {
-        Object comeBackValue = restTemplate.getForObject("http://EUREKA-SERVER/test/selectDiscoveryServer.do", Object.class);
+        logger.info("测试=================");
+        UserPO comeBackValue = restTemplate.getForObject("http://EUREKA-SERVER/test/selectDiscoveryServer.do", UserPO.class);
         return comeBackValue;
     }
 
     @GetMapping("getConfig.do")
     public String getConfig() {
-
+        logger.info("测试=================");
         return userName;
     }
 }
