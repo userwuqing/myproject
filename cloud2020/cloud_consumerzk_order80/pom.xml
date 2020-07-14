@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud_consumer_order80</artifactId>
+    <artifactId>cloud_consumerzk_order80</artifactId>
 
     <dependencies>
         <dependency>
@@ -44,15 +44,16 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
-        <!--入住服务注册中心需要引入，自带ribbon-->
-        <dependency>
+        <!--入住服务注册中心需要引入-->
+    <!--    <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <!--<dependency>
-            <artifactId>com.wq</artifactId>
-            <groupId>cloud_api_commons</groupId>
-            <version>1.0</version>
         </dependency>-->
+        <!--注册到zookeeper中所需依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
+        </dependency>
     </dependencies>
+
 </project>

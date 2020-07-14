@@ -12,3 +12,8 @@ eureka:
     service-url: #这里是map结构，defaultZone是key
       defaultZone: http://eureka7002.com:7002/eureka/
 
+  server:
+    enable-self-preservation: false #关闭自我保护机制,保证不可用的服务及时剔除，生产建议开
+    eviction-interval-timer-in-ms: 2000 #单位ms
+
+

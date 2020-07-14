@@ -1,4 +1,4 @@
-package com.wu;
+package com.wq;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,6 +12,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
+//配置某个微服务使用某种策略的负载均衡，这里是支付服务模块
+//@RibbonClient(name = "CLOUD-PYMENT-SERVICE", configuration = RuleTest.class)
 public class OrderApplication {
 
     public static void main(String[] args) {

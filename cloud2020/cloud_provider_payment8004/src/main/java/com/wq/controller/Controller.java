@@ -36,7 +36,7 @@ public class Controller {
     @GetMapping("select.do")
     public String select(@RequestParam("id") String id) {
 
-        return paymentService.selectPayment(Long.valueOf(id)).toString()+"8001";
+        return paymentService.selectPayment(Long.valueOf(id)).toString()+"8002";
     }
 
 

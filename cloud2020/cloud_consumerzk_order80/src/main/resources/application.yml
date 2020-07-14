@@ -1,0 +1,33 @@
+server:
+  port: 80 #客户不用关心端口
+
+spring:
+  application:
+    name: cloud-consumerzk-order
+
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #操作源数据类型
+    driver-class-name: com.mysql.jdbc.Driver #驱动包
+    url: jdbc:mysql://localhost:3306/wq #数据库url
+    username: root
+    password: 123456
+
+  cloud:
+    zookeeper:
+      #zookeeper服务器的地址于端口
+      connect-string: zookeeper.com:2181
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.wq.entries
+
+  #
+#eureka:
+#  client:
+#    register-with-eureka: true #因为这里是服务，因此必须注册导eureka注册中心中
+#    fetch-registry: true # 自己也需要从注册中心获取其他注册信息，因为自己有可能调用其他服务
+#    service-url:
+#      #这里是eureka服务中心地址，多个用,隔开
+#      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+

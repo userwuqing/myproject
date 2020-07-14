@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud_consumer_order80</artifactId>
+    <artifactId>cloud_provider_payment8004</artifactId>
 
     <dependencies>
         <dependency>
@@ -43,16 +43,30 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <!--
+                <dependency>
+                    <artifactId>com.wq</artifactId>
+                    <groupId>cloud_api_commons</groupId>
+                    <version>1.0</version>
+                </dependency>-->
 
-        <!--入住服务注册中心需要引入，自带ribbon-->
-        <dependency>
+        <!--入住服务注册中心需要引入(Eureka)-->
+       <!-- <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>-->
+
+        <!--入住服务注册中心需要引入(zookeeper)-->
+        <!--这里有可能会出现zookeeper的版本不一致，需要排除自带的，并导入zookeeper当前服务的版本-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
         </dependency>
         <!--<dependency>
-            <artifactId>com.wq</artifactId>
-            <groupId>cloud_api_commons</groupId>
-            <version>1.0</version>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>当前zookeeper的版本</version>
         </dependency>-->
     </dependencies>
+
 </project>

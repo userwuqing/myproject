@@ -1,4 +1,4 @@
-package com.wu.entries;
+package com.wq.entries;
 
 import java.io.Serializable;
 
