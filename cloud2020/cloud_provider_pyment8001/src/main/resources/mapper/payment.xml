@@ -7,8 +7,8 @@
         <result column="fserial" property="serial" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <insert id="insert" keyProperty="fid" useGeneratedKeys="true" parameterType="com.wq.entries.Payment">
-        insert into t_payment(fserial) values(#{serial})
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true" parameterType="com.wq.entries.Payment">
+        insert into t_payment(fid,fserial) values(#{id},#{serial})
     </insert>
 
     <select id="selectPayment" parameterType="long" resultMap="BaseMap">
