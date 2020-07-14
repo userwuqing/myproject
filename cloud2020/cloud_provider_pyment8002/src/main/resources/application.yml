@@ -1,9 +1,9 @@
 server:
-  port: 8001
+  port: 8002
 
 spring:
   application:
-    name: cloud-pyment-service #入住注册中心的名称
+    name: cloud-pyment-service #入住注册中心的名称,可以一样但是端口不一样
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource #操作源数据类型

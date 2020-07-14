@@ -1,0 +1,18 @@
+server:
+  port: 7002
+
+
+eureka:
+  instance:
+    hostname: eureka7002.com #注册中心使用的是这个
+
+  client:
+    register-with-eureka: false #自己不注册自己，默认true
+    #表示从eureka服务抓取已有的注册信息，默认true，单机可不管，集群必须为true
+    fetch-registry: true
+    service-url: #这里是map结构，defaultZone是key
+      defaultZone: http://eureka7001.com:7001/eureka/
+
+spring:
+  application:
+    name: eureka7002

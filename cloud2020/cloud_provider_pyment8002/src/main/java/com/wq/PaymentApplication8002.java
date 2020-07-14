@@ -12,10 +12,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient //入住注册中心
-public class PaymentApplication {
+public class PaymentApplication8002 {
     public static void main(String[] args) {
         //约定》配置》编码
         //有前端交互的需要web依赖
-        SpringApplication.run(PaymentApplication.class, args);
+        SpringApplication.run(PaymentApplication8002.class, args);
     }
 }

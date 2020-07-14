@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud_provider_pyment8001</artifactId>
+    <artifactId>cloud_consumer_order80</artifactId>
 
     <dependencies>
         <dependency>
@@ -43,18 +43,16 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-<!--
-        <dependency>
-            <artifactId>com.wq</artifactId>
-            <groupId>cloud_api_commons</groupId>
-            <version>1.0</version>
-        </dependency>-->
 
         <!--入住服务注册中心需要引入-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+        <!--<dependency>
+            <artifactId>com.wq</artifactId>
+            <groupId>cloud_api_commons</groupId>
+            <version>1.0</version>
+        </dependency>-->
     </dependencies>
-
 </project>

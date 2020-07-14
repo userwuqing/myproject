@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.PaymentDao">
+<mapper namespace="com.com.wq.dao.PaymentDao">
 
-    <resultMap id="BaseMap" type="com.Payment">
+    <resultMap id="BaseMap" type="com.wq.entries.Payment">
         <result column="fid" property="id" jdbcType="BIGINT"/>
         <result column="fserial" property="serial" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <insert id="insert" keyProperty="id" useGeneratedKeys="true" parameterType="com.Payment">
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true" parameterType="com.wq.entries.Payment">
         insert into t_payment(fid,fserial) values(#{id},#{serial})
     </insert>
 
