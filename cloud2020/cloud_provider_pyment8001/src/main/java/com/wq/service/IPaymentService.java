@@ -1,5 +1,7 @@
 package com.wq.service;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.wq.entries.Payment;
 
 /**
@@ -10,7 +12,14 @@ import com.wq.entries.Payment;
  */
 public interface IPaymentService {
 
+    @HystrixCommand(fallbackMethod = "")
     void add(Payment payment);
 
+
+
     Payment selectPayment(Long id);
+
+    Payment selectPaymentException(Long id);
+
+    String paymentCircuitBreaker(Long id);
 }

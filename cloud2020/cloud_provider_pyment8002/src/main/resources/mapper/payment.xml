@@ -13,5 +13,6 @@
 
     <select id="selectPayment" parameterType="long" resultMap="BaseMap">
         select * from t_payment
+        where fid = #{id}
     </select>
 </mapper>

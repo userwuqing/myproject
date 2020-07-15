@@ -1,0 +1,34 @@
+server:
+  port: 8801
+
+spring:
+  application:
+    name: cloud-provider-stream #入住注册中心的名称,可以一样但是端口不一样
+
+  cloud:
+    stream:
+      binders: #此处绑定rabbitMq配置信息
+        defaultRabbit: #表示定义的名称
+          type: rabbit #消息组件类型
+          environment: #组件环境配置
+            rabbitmq:
+              host: 127.0.0.1
+              port: 5672
+              username: guest
+              password: guest
+
+      bindings:
+        output: #定义通道名称
+          destination: exchangeMq #交换机名称，唯一
+          content-type: application/json #指定消息的类型
+          binder: defaultRabbit #绑定消息服务的具体设置
+
+  #
+#eureka:
+#  client:
+#    register-with-eureka: true #因为这里是服务，因此必须注册导eureka注册中心中
+#    fetch-registry: true # 自己也需要从注册中心获取其他注册信息，因为自己有可能调用其他服务
+#    service-url:
+#      #这里是eureka服务中心地址，多个用,隔开
+#      #defaultZone: http://eureka7001.com:7001/eureka 单机版
+#      defaultZone: http://eureka7001.com:7001/eureka #,http://eureka7002.com:7002/eureka #集群版

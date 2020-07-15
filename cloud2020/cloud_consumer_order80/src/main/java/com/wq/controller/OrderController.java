@@ -1,6 +1,7 @@
 package com.wq.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +25,9 @@ public class OrderController {
 //    private final static String URL_BASE = "http://127.0.0.1:8001";
     private final static String URL_BASE = "http://CLOUD-PYMENT-SERVICE";
 
+    @Value("${service-url.nacos-user-service}")
+    private String serverUrl;
+
     @Autowired
     private RestTemplate restTemplate;
 
@@ -38,7 +42,7 @@ public class OrderController {
         //目标微服务使用@RequestParam这个注解时，需要在请求时拼接参数，或者
         System.out.println(request.getQueryString());
 //        ResponseEntity<String> entity = restTemplate.getForEntity(URL_BASE + "/test/select.do?id="+id, String.class);
-        ResponseEntity<String> entity = restTemplate.getForEntity(URL_BASE +"/test/select.do?id="+id, String.class);
+        ResponseEntity<String> entity = restTemplate.getForEntity(serverUrl +"/test/select.do?id="+id, String.class);
         return entity.toString();
     }
 }

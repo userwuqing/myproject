@@ -45,14 +45,19 @@
         </dependency>
 
         <!--入住服务注册中心需要引入，自带ribbon-->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
+        </dependency>-->
         <!--<dependency>
             <artifactId>com.wq</artifactId>
             <groupId>cloud_api_commons</groupId>
             <version>1.0</version>
         </dependency>-->
+        <!--引入阿里巴巴的注册中心依赖,不能与spring-cloud-starter-netflix-eureka-client同时引用-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
     </dependencies>
 </project>

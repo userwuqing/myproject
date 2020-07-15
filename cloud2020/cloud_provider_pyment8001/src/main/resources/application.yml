@@ -12,26 +12,39 @@ spring:
     username: root
     password: 123456
 
+    #配置alibaba的nacos注册中心
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 #nacos配置中心地址类似zookeeper
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.wq.entries
 
-  #
-eureka:
-  client:
-    register-with-eureka: true #因为这里是服务，因此必须注册导eureka注册中心中
-    fetch-registry: true # 自己也需要从注册中心获取其他注册信息，因为自己有可能调用其他服务
-    service-url:
-      #这里是eureka服务中心地址，多个用,隔开
-      #defaultZone: http://eureka7001.com:7001/eureka 单机版
-      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka #集群版
+#eureka注册中心的配置
+#eureka:
+#  client:
+#    register-with-eureka: true #因为这里是服务，因此必须注册导eureka注册中心中
+#    fetch-registry: true # 自己也需要从注册中心获取其他注册信息，因为自己有可能调用其他服务
+#    service-url:
+#      #这里是eureka服务中心地址，多个用,隔开
+#      #defaultZone: http://eureka7001.com:7001/eureka 单机版
+#      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka #集群版
+#
+#      #展示在eureka中的信息
+#  instance:
+#    instance-id: payment8001
+#    prefer-ip-address: true #显示ip
+#    #单位s，默认30 eureka客户端默认向注册中心心跳间隔
+#    lease-renewal-interval-in-seconds: 15
+#    #单位s，默认90。eureka注册中心最后一次收到心跳时的等待时间，超时则将服务从注册中心剔除
+#    lease-expiration-duration-in-seconds: 30
 
-      #展示在eureka中的信息
-  instance:
-    instance-id: payment8001
-    prefer-ip-address: true #显示ip
-    #单位s，默认30 eureka客户端默认向注册中心心跳间隔
-    lease-renewal-interval-in-seconds: 15
-    #单位s，默认90。eureka注册中心最后一次收到心跳时的等待时间，超时则将服务从注册中心剔除
-    lease-expiration-duration-in-seconds: 30

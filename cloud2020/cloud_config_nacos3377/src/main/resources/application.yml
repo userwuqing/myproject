@@ -1,0 +1,4 @@
+spring:
+  profiles:
+#    active: dev #可以从nacos中心获取dev配置文件
+    active: test #可以从nacos中心获取test配置文件

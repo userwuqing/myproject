@@ -1,0 +1,26 @@
+server:
+  port: 5757 #
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: payment_path #路由id，必须唯一，随便命名
+#          uri: http://127.0.0.1:8001
+          uri: lb://CLOUD-PYMENT-SERVICE
+          predicates:
+            - Path=/test/**
+          #当访问uri为localhost:5757/test/时，会转到目标服务也就是http://127.0.0.1:8001/test/**
+
+eureka:
+  client:
+    register-with-eureka: true #因为这里是服务，因此必须注册导eureka注册中心中
+    fetch-registry: true # 自己也需要从注册中心获取其他注册信息，因为自己有可能调用其他服务
+    service-url:
+      #这里是eureka服务中心地址，多个用,隔开
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+
+
+

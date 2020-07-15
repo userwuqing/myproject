@@ -24,3 +24,18 @@ eureka:
       #这里是eureka服务中心地址，多个用,隔开
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
 
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 3000 #配置feign连接超时
+        readTimeout: 30000 #配置feign获取返回超时
+
+  hystrix:
+    enabled: true #feign集成了hystrix，这里是启用客户端降级
+
+
+logging:
+  level:
+    com.wq.service.IPaymentService: debug #监控某个service接口的日志级别

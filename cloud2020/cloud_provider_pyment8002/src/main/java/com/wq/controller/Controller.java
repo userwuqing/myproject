@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Description：
  *
@@ -34,5 +36,17 @@ public class Controller {
     public String select(@RequestParam("id") String id) {
 
         return paymentService.selectPayment(Long.valueOf(id)).toString()+"8002";
+    }
+
+    @GetMapping("testTimeOut.do")
+    public String testTimeOut() {
+        //测试 feign超时控制
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return "8001";
     }
 }

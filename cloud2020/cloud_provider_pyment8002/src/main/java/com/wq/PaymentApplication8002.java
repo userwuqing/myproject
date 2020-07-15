@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 
 /**
  * Description：支付模块
@@ -14,6 +15,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 @EnableEurekaClient //入住注册中心
 @EnableDiscoveryClient //服务发现，可提供各种信息，非常重要
+@EnableHystrix //启动熔断机制
 public class PaymentApplication8002 {
     public static void main(String[] args) {
         //约定》配置》编码
