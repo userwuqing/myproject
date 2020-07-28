@@ -21,6 +21,11 @@ spring:
         file-extension: yaml #指定配置文件类型
 #        namespace: #这里是nacos配置的命名空间（nacos会生成id）的配置文件
 #        group: #这里是nacos配置的group命名的配置文件
+    sentinel:
+      transport:
+        port: 8719
+        #指定监控的url路径，sentinel采用懒加载，需要先请求系统时，dashboard才会有
+        dashboard: localhost:8081
 
 service-url:
   nacos-user-service: http://cloud-pyment-service

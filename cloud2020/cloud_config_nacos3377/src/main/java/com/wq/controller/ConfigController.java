@@ -1,5 +1,6 @@
 package com.wq.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,10 @@ public class ConfigController {
     private String config;
 
     @GetMapping("getConfig.do")
+    @SentinelResource
+    //blockHandler 只管sentinel规则异常
+    //fallback 只管异常
+
     public String getConfig() {
 
         return config;
